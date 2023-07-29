@@ -5,7 +5,7 @@ from keyboards.utility_keys import start_keyboard
 from aiogram.dispatcher import FSMContext
 from states.main_menu import StateMenu
 from keyboards.keys import get_keyboard
-from messages import NOT_FOUND_MESSAGE
+from messages import NOT_FOUND_MESSAGE, TECHNICAL_DETAILS_MESSAGE
 
 # Вынес стейты в константу чтобы избавиться от ветвлений
 STATES = {
@@ -44,6 +44,10 @@ async def get_menu_for_module(msg: Message, state: FSMContext):
 
 async def not_found_command(msg: Message):
     await msg.answer(NOT_FOUND_MESSAGE)
+
+
+async def technical_details(msg: Message):
+    await msg.answer(TECHNICAL_DETAILS_MESSAGE)
 
 
 def register_utility(dp: Dispatcher):

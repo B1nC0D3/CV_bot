@@ -10,12 +10,12 @@ from messages import NOT_FOUND_MESSAGE
 STATES = {
     'Обо мне': StateMenu.about_me,
     'Войсы': StateMenu.voices,
-    'Фото': StateMenu.photo
+    'Фото': StateMenu.photos
 }
 
 
 async def start_message(msg: Message):
-    await msg.reply('Привет! Это бот для знакомства со мной(@B1nC0D3).\n'
+    await msg.reply('Привет! Это бот для знакомства со мной - @B1nC0D3.\n'
                     'Выбери интересующий раздел:',
                     reply_markup=start_keyboard)
 

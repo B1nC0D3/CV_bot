@@ -6,6 +6,7 @@ from aiogram.types import InputFile
 from settings import GPT_VOICE, SQL_VOICE, FIRST_LOVE_VOICE
 
 
+# Возможно так же нужно было это объеденить в один хэндлер по аналогии со стейтами
 async def send_gpt_voice(msg: Message):
     await msg.answer_voice(InputFile(GPT_VOICE))
 

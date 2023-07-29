@@ -7,6 +7,7 @@ from aiogram.types import InputFile
 
 
 async def last_photo(msg: Message):
+    # Берем уже существующий класс от библиотеки, вместо того чтобы городить работу с файлом
     await msg.answer_photo(InputFile(LAST_PHOTO),
                            caption='Я решил быть честным и '
                                    'действительно отправил последнее фото XD')

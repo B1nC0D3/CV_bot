@@ -14,6 +14,8 @@ async def about_hobbies(msg: Message):
 
 
 def register_about_me(dp: Dispatcher):
+    # Регистрируем каждый хэндлер, возможно стоило сделать как в utility
+    # со стейтами, нужна обратная связь
     dp.register_message_handler(about_me_general,
                                 Text(equals='Общее представление', ignore_case=True),
                                 state=StateMenu.about_me)

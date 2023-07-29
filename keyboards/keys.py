@@ -1,6 +1,7 @@
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 from aiogram.dispatcher import FSMContext
 
+# Прописываем все уникальные кнопки для каждой категории
 ABOUT_ME_KEYS = (KeyboardButton(text='Общее представление'),
                  KeyboardButton(text='О хобби'))
 
@@ -11,6 +12,7 @@ VOICES_KEYS = (KeyboardButton(text='О GPT'),
                KeyboardButton(text='Разница между SQL и NoSQL'),
                KeyboardButton(text='Про первую любовь'))
 
+# И связываем их со стейтами
 KEYBOARDS_VALUES = {
     'StateMenu:about_me': ABOUT_ME_KEYS,
     'StateMenu:photos': PHOTOS_KEYS,
@@ -24,6 +26,7 @@ async def get_keyboard(state: FSMContext):
     keys_key = await state.get_state()
     keys = KEYBOARDS_VALUES.get(keys_key)
 
+    # Возвращаем нужную клавиатуру, предварительно добавив назад
     keyboard.add(*keys)
     keyboard.add(KeyboardButton(text='Назад'))
     return keyboard

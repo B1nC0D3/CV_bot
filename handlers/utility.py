@@ -7,6 +7,7 @@ from states.main_menu import StateMenu
 from keyboards.keys import get_keyboard
 from messages import NOT_FOUND_MESSAGE
 
+# Вынес стейты в константу чтобы избавиться от ветвлений
 STATES = {
     'Обо мне': StateMenu.about_me,
     'Войсы': StateMenu.voices,
@@ -27,10 +28,14 @@ async def reset_state(msg: Message, state: FSMContext):
 
 
 async def get_menu_for_module(msg: Message, state: FSMContext):
+    # Проверяем есть ли сообщение от юзера у нас в константах для выдачи стейта,
+    # если нет выбрасываемся обратно
     user_state = STATES.get(msg.text)
     if not user_state:
         await msg.answer(NOT_FOUND_MESSAGE)
         return
+    # Если есть, то ставим этот стейт и идем генерировать соответствущую клавиатуру,
+    # после отправляем сообщение с ней
     await state.set_state(user_state)
     keyboard = await get_keyboard(state)
     await msg.answer('Выбери интересующую тему:',

@@ -20,7 +20,7 @@ async def send_first_love_voice(msg: Message):
 
 
 def register_voices(dp: Dispatcher):
-    dp.register_message_handler(send_sql_voice,
+    dp.register_message_handler(send_gpt_voice,
                                 Text(equals='О GPT', ignore_case=True),
                                 state=StateMenu.voices)
     dp.register_message_handler(send_sql_voice,

@@ -4,6 +4,7 @@ After=multi-user.target
 [Service]
 Type=simple
 Restart=always
-ExecStart=/usr/bin/python3 /root/CV_bot/main.py
+WorkingDirectory=/root/CV_bot
+ExecStart=/usr/bin/python3 main.py
 [Install]
 WantedBy=multi-user.target

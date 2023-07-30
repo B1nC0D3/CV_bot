@@ -12,5 +12,5 @@ LAST_PHOTO = MEDIA_ROOT / './photos/last_photo.jpg'
 SCHOOL_PHOTO = MEDIA_ROOT / './photos/school_photo.jpg'
 
 GPT_VOICE = MEDIA_ROOT / './voices/gpt.ogg'
-SQL_VOICE = MEDIA_ROOT / './voices/slq_vs_nosql.ogg'
+SQL_VOICE = MEDIA_ROOT / './voices/sql_vs_nosql.ogg'
 FIRST_LOVE_VOICE = MEDIA_ROOT / './voices/first_love.ogg'

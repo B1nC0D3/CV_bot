@@ -52,7 +52,7 @@ async def technical_details(msg: Message):
 
 def register_utility(dp: Dispatcher):
     dp.register_message_handler(start_message, commands=['start'])
-    dp.register_message_handler(technical_details, commands=['tech'])
+    dp.register_message_handler(technical_details, commands=['tech'], state='*')
     dp.register_message_handler(reset_state,
                                 Text(equals='Назад', ignore_case=True),
                                 state='*')

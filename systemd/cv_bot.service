@@ -1,0 +1,9 @@
+[Unit]
+Description=Cv bot for ya.prakticum
+After=multi-user.target
+[Service]
+Type=simple
+Restart=always
+ExecStart=/usr/bin/python3 /root/CV_bot/main.py
+[Install]
+WantedBy=multi-user.target

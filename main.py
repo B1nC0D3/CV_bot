@@ -11,7 +11,7 @@ import asyncio
 # Юзаю лист из-за какой-то специфики работы функции, глубоко не лез.
 BOT_COMMANDS = [
     BotCommand(command='/start', description='Запуск бота'),
-    BotCommand(command='/tech_details', description='Технические детали и ссылка на репозиторий')]
+    BotCommand(command='/tech', description='Технические детали и ссылка на репозиторий')]
 
 
 async def set_commands(bot: Bot):
@@ -23,7 +23,8 @@ async def main():
     bot = Bot(TG_TOKEN)
     dp = Dispatcher(bot, storage=MemoryStorage())
 
-    # Регистрируем хэндлеры, утилити обязательно последними
+    # Регистрируем хэндлеры и команды, утилити обязательно последними
+    await set_commands(bot)
     register_about_me(dp)
     register_photos(dp)
     register_voices(dp)

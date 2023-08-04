@@ -10,7 +10,7 @@
     python3 -m venv venv # установка виртуального окружения
     source venv/bin/activate # активация виртуального окружения
     pip install -r requirements.txt # установка зависимостей
-    python3 main.py # запуск паука
+    python3 main.py # запуск бота
 ```
 ---
 
